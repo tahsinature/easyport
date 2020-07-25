@@ -1,0 +1,42 @@
+{
+  "name": "easyport",
+  "description": "A small but awesome tool to manage your ports.",
+  "version": "1.0.5",
+  "author": "Tahsin @tahsinature",
+  "bin": {
+    "easyport": "./bin/run"
+  },
+  "bugs": "https://github.com/tahsinature/easyport/issues",
+  "dependencies": {
+    "@oclif/command": "^1.7.0",
+    "@oclif/config": "^1.16.0",
+    "@oclif/plugin-help": "^3.1.0",
+    "prompts": "^2.3.2",
+    "shelljs": "^0.8.4"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/tahsinature/easyport",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "bin": "easyport"
+  },
+  "repository": "tahsinature/easyport",
+  "scripts": {
+    "prepack": "oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
