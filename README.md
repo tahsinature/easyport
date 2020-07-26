@@ -6,27 +6,25 @@ A small but awesome tool to manage your ports.
 [![License](https://img.shields.io/npm/l/easyport.svg)](https://github.com/tahsinature/easyport/blob/master/package.json)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
+* [easyport](#easyport)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g easyport
-$ easyport
+$ easyport COMMAND
 running command...
 $ easyport (-v|--version|version)
-easyport/1.0.5 darwin-x64 node-v12.13.0
+easyport/1.0.6 darwin-x64 node-v12.13.0
 $ easyport --help [COMMAND]
 USAGE
   $ easyport COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands

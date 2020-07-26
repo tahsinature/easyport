@@ -1,7 +1,7 @@
 {
   "name": "easyport",
   "description": "A small but awesome tool to manage your ports.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Tahsin @tahsinature",
   "bin": {
     "easyport": "./bin/run"
