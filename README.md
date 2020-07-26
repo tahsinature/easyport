@@ -19,7 +19,7 @@ $ npm install -g easyport
 $ easyport COMMAND
 running command...
 $ easyport (-v|--version|version)
-easyport/1.0.6 darwin-x64 node-v12.13.0
+easyport/1.0.7 darwin-x64 node-v12.13.0
 $ easyport --help [COMMAND]
 USAGE
   $ easyport COMMAND
