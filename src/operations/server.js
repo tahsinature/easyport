@@ -39,6 +39,7 @@ class ServerCommand extends Command {
     const server = this.getServer(name);
     server.listen(port, () => {
       console.log(`Listening on port ${colors.green(port)}
+pid: ${colors.dim(process.pid)}
 ${colors.gray(`http://0.0.0.0:${port}`)}
 ${colors.gray(`http://localhost:${port}`)}
 `);
