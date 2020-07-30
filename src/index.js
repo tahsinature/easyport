@@ -2,7 +2,8 @@ const { Command } = require("@oclif/command");
 const prompts = require("prompts");
 const Server = require("./operations/server");
 const Check = require("./operations/check");
-const Kill = require("./operations/kill");
+const KillPort = require("./operations/killport");
+const KillPid = require("./operations/killpid");
 const colors = require("colors");
 
 const promptOpt = {
@@ -10,9 +11,10 @@ const promptOpt = {
   name: "operation",
   message: "Select an operation",
   choices: [
-    { title: "Port Killer", value: "kill" },
-    { title: "Port Checker", description: "This option has a description", value: "check" },
-    { title: "Port Listener", value: "listen" },
+    { title: "Process Killer (By Port)", value: "killport", description: "Select and kill processes that listening to port" },
+    { title: "Process Killer (By Pid)", value: "killpid", description: "Input a pid and kill the process" },
+    { title: "Port Checker", value: "check", description: "List all the listening ports" },
+    { title: "Port Listener", value: "listen", description: "Listen to a port by creating a small server" },
   ],
   initial: 0,
 };
@@ -37,8 +39,11 @@ class Main extends Command {
       case "check":
         await Check.run();
         break;
-      case "kill":
-        await Kill.run();
+      case "killport":
+        await KillPort.run();
+        break;
+      case "killpid":
+        await KillPid.run();
         break;
       default:
         console.log(colors.cyan("Oops. Hopefully next time 👋"));

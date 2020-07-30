@@ -15,7 +15,7 @@ const listProcesses = list => {
   });
 };
 
-class Kill extends Command {
+class KillPort extends Command {
   async run() {
     const check = new Check();
     const data = check.getListeningPortsData();
@@ -50,4 +50,4 @@ class Kill extends Command {
   }
 }
 
-module.exports = Kill;
+module.exports = KillPort;
