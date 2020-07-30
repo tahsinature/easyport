@@ -15,10 +15,19 @@ const askPid = list => {
 };
 
 class KillPort extends Command {
+  /**
+   * https://pubs.opengroup.org/onlinepubs/9699919799/functions/kill.html
+   */
+  errorCodes = {
+    EINVAL: "The value of the sig argument is an invalid or unsupported signal number.",
+    EPERM: "The process does not have permission to send the signal to any receiving process.",
+    ESRCH: "No process or process group can be found corresponding to that specified by pid.",
+  };
+
   async run() {
     const { pid } = await askPid();
     if (!pid) {
-      console.log(colors.red("No process selected!"));
+      console.log(colors.red("No pid given!"));
       process.exit(1);
     }
 
@@ -26,7 +35,7 @@ class KillPort extends Command {
       process.kill(pid);
       console.log(colors.cyan("Process killed"));
     } catch (error) {
-      console.log(`Failed to kill - ${colors.red(error.message)}`);
+      console.log(colors.red(this.errorCodes[error.code]));
     }
   }
 
