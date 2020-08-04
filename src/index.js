@@ -4,6 +4,7 @@ const Server = require("./operations/server");
 const Check = require("./operations/check");
 const KillPort = require("./operations/killport");
 const KillPid = require("./operations/killpid");
+const Docker = require("./operations/docker");
 const colors = require("colors");
 
 const promptOpt = {
@@ -15,6 +16,7 @@ const promptOpt = {
     { title: "Process Killer (By Pid)", value: "killpid", description: "Input a pid and kill the process" },
     { title: "Port Checker", value: "check", description: "List all the listening ports" },
     { title: "Port Listener", value: "listen", description: "Listen to a port by creating a small server" },
+    { title: "Docker Tools", value: "docker", description: "Some handy tools for docker" },
   ],
   initial: 0,
 };
@@ -44,6 +46,9 @@ class Main extends Command {
         break;
       case "killpid":
         await KillPid.run();
+        break;
+      case "docker":
+        await Docker.run();
         break;
       default:
         console.log(colors.cyan("Oops. Hopefully next time 👋"));

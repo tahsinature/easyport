@@ -1,6 +1,5 @@
 const { Command } = require("@oclif/command");
 const prompts = require("prompts");
-const Check = require("./check");
 const kill = require("tree-kill");
 const colors = require("colors");
 
