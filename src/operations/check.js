@@ -3,7 +3,6 @@ const prompts = require("prompts");
 const shell = require("shelljs");
 const pidusage = require("pidusage");
 const Table = require("cli-table");
-const colors = require("colors");
 
 const listProcesses = list => {
   return prompts(

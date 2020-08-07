@@ -104,6 +104,7 @@ class KillPort extends Command {
    */
   async execContainersAction(containers, action) {
     for (const container of containers) {
+      const msg = colors.cyan(`✅ action: ${colors.bold(action)}. container: ${container.Names[0]}`);
       switch (action) {
         case "remove":
           await this.docker.getContainer(container.Id).remove({ force: true });
@@ -118,6 +119,7 @@ class KillPort extends Command {
         default:
           console.log(colors.red("container action not supported"));
       }
+      console.log(msg);
     }
   }
 
