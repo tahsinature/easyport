@@ -12,7 +12,7 @@ const choices = [
   { title: "Process Killer (By Port)", value: "kill-process-by-port", description: "Kill process by port" },
   { title: "Process Killer (By Pid)", value: "kill-by-pid", description: "Kill process by pid" },
   { title: `List Listening Ports ${colors.red("(Beta)")}`, value: "list-listening-port", description: "Currently works only with macOS" },
-  { title: "Port Checker", value: "port-check", description: "List all the listening ports" },
+  { title: `Port Checker ${colors.red("(Beta)")}`, value: "port-check", description: "Currently works only with macOS" },
   { title: "Create Server", value: "start-server", description: "Listen to a port by creating a small server" },
 ];
 
