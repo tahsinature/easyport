@@ -6,23 +6,22 @@ const Table = require("cli-table");
 const colors = require("colors");
 
 const listProcesses = list => {
-  return prompts({
-    type: "autocompleteMultiselect",
-    name: "pids",
-    message: "Pick a process",
-    choices: list.map(ele => ({ title: `${ele.name} (${ele.addr})`, value: ele.pid })),
-    min: 1,
-  });
+  return prompts(
+    {
+      type: "autocompleteMultiselect",
+      name: "pids",
+      message: "Pick a process",
+      choices: list.map(ele => ({ title: `${ele.name} (${ele.addr})`, value: ele.pid })),
+      min: 1,
+    },
+    { onCancel: process.exit }
+  );
 };
 
 class Check extends Command {
   async run() {
     const data = this.getListeningPortsData();
     const { pids } = await listProcesses(data);
-    if (!pids) {
-      console.log(colors.red("No process selected!"));
-      process.exit(1);
-    }
 
     const processDetails = await pidusage(pids);
     const table = new Table({ head: Object.keys(Object.values(processDetails)[0]) });
