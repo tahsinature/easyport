@@ -1,4 +1,6 @@
-# easyport
+# easyport 
+
+▸ this package moved to [cross-tools](https://github.com/tahsinature/cross-tools)
 
 A small but awesome tool to manage your ports.
 
